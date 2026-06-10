@@ -1,6 +1,9 @@
 # Projeto-POO
 Projeto Programação Orientada a Objetos
+A livraria é o tema escolhido por envolver entidades do mundo real bem definidas — livros, clientes e vendas — o que torna o aprendizado de POO mais concreto e fácil de entender.
+O sistema permite gerenciar uma livraria do zero: cadastrar o catálogo de livros, registrar clientes e controlar as vendas com baixa automática de estoque. Tudo isso com um banco de dados real por trás, garantindo que os dados não se percam quando o programa fecha.
 O projeto está no início e a ideia é ir melhorando conforme aprendo mais na disciplina. Abaixo estão as etapas que planejo implementar:
+
 
 Etapa 1 — Conectar Java com MySQL (JDBC)
 
