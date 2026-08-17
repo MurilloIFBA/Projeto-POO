@@ -7,13 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Centraliza a criação de conexões com o banco.
- *
- * As credenciais NÃO ficam no código: elas são lidas do arquivo
- * "config.properties", que deve estar na pasta src (mesmo nível dos
- * pacotes) e que fica no .gitignore, ou seja, nunca é enviado ao GitHub.
- */
+
 public class ConexaoFactory {
 
     private static final Properties props = new Properties();
