@@ -15,23 +15,21 @@ public class VendaDAO {
         return ConexaoFactory.conectar();
     }
 
-    // Registra a venda e desconta o estoque. Retorna false se não houver
-    // estoque suficiente (em vez de lançar uma exceção customizada, só
-    // pra manter simples).
+    
     public boolean registrar(Venda venda) throws SQLException {
         String sqlEstoque = "SELECT estoque FROM livros WHERE id = ?";
         String sqlInsere  = "INSERT INTO vendas (livro_id, cliente_id, quantidade) VALUES (?, ?, ?)";
         String sqlAtualizaEstoque = "UPDATE livros SET estoque = estoque - ? WHERE id = ?";
 
         try (Connection conn = conectar()) {
-            conn.setAutoCommit(false); // transação: ou tudo funciona, ou nada é gravado
+            conn.setAutoCommit(false); 
 
             try (PreparedStatement stmt = conn.prepareStatement(sqlEstoque)) {
                 stmt.setInt(1, venda.getLivro().getId());
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (!rs.next() || rs.getInt("estoque") < venda.getQuantidade()) {
                         conn.rollback();
-                        return false; // estoque insuficiente
+                        return false; 
                     }
                 }
             }
